@@ -14,7 +14,7 @@ So spin up a new VM, copy *.cs in your (root) home folder and then run:
 ```
 Now you can use the VM ip address to determine open ports on your firewall. 
 Note that this is a dev utility, and is aimed to be minimal, no error handling. 
-In case of a error stack trace is dumpled to console.
+In case of a error, stack trace is dumpled to console.
 ```
 Usage: pln.exe startPort [endPort] [/b=[VALUE]] [/c] [/s] [/t]
   -b[=VALUE]   display binding progress every VALUE ports. Default 100.
