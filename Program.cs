@@ -60,24 +60,6 @@ namespace PortListener
             string exe = Path.GetFileName(Process.GetCurrentProcess().MainModule.FileName);
             Console.WriteLine("Usage: " + exe + " startPort [endPort] [/b=[VALUE]] [/c] [/s] [/t]");
             optionSet.WriteOptionDescriptions(Console.Out);
-            Console.WriteLine();
-            Console.WriteLine("This is a very basic TCP port listener that allows you to listen on a port range");
-            Console.WriteLine("If you run this program outside of firewall and run a port scanner inside a firewall");
-            Console.WriteLine("pointing to the ip address where this program runs, the port scanner will be able you");
-            Console.WriteLine("to tell which exactly ports are open on the firewall.");
-            Console.WriteLine();
-            Console.WriteLine("This code will run on Windows, but most importantly also on linux.");
-            Console.WriteLine("DigitalOcean.com has all ports for their VMs open by default. So spin a new VM,");
-            Console.WriteLine("copy pln.cs in your (root) home folder and then run:");
-            Console.WriteLine("# apt-get update");
-            Console.WriteLine("# apt-get install mono-mcs -y");
-            Console.WriteLine("# mcs Program.cs Config.cs ListenerState.cs Options.cs -out:pln.exe");
-            Console.WriteLine("# ulimit -n 66000");
-            Console.WriteLine("# ./pln.exe 1 65535");
-            Console.WriteLine();
-            Console.WriteLine("Now you can use the VM ip address to determine open ports on your firewall");
-            Console.WriteLine("Note that this is a dev utility, and is aimed to be minimal,");
-            Console.WriteLine("no error handling. In case of a error stack trace is dumpled to console");
         }
 
         private static void ParseDisplayBindingProgress(string s, ref Config result, StringBuilder parsingErrors)
