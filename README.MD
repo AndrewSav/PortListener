@@ -4,7 +4,7 @@ If you run this program outside of a firewall and run a port scanner inside the 
 the port scanner will be able to tell you exactly which ports are open on the firewall.
 
 This code will run on Windows, but most importantly also on linux. DigitalOcean.com has all ports for their VMs open by default. 
-So spin up a new ubuntu VM, copy *.cs in your (root) home folder and then run:
+So spin up a new ubuntu VM and then run:
 ```
 # apt-get update
 # apt-get install git mono-mcs -y
