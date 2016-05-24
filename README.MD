@@ -7,10 +7,12 @@ This code will run on Windows, but most importantly also on linux. DigitalOcean.
 So spin up a new ubuntu VM, copy *.cs in your (root) home folder and then run:
 ```
 # apt-get update
-# apt-get install mono-mcs -y
+# apt-get install git mono-mcs -y
+# git clone https://github.com/AndrewSav/PortListener.git
+# cd PortListener
 # mcs Program.cs Config.cs ListenerState.cs Options.cs -out:pln.exe
 # ulimit -n 66000
-# ./pln.exe 1 65535
+# ./pln.exe 1 65535 -c -t
 ```
 Now you can use the VM ip address to determine open ports on your firewall. 
 Note that this is a dev utility, and is aimed to be minimal, no error handling. 
