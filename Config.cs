@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Threading;
 
 namespace PortListener
 {
@@ -11,14 +13,22 @@ namespace PortListener
         public uint BindingProgressInterval { get; set; }
         public uint PortStart { get; set; }
         public uint PortEnd { get; set; }
+        public bool DumpIncomingData { get; set; }
+        public int IncomingDataWaitTime { get; set; }
+        public int DataDumpLimit { get; set; }
+        public IPAddress[] BoundIpAddress { get; set; }
+
+        public Config()
+        {
+            BoundIpAddress = new[] {IPAddress.Any};
+        }
 
         public Action<string> WriteProgress
         {
             get
             {
-                return DisplayTimestamp
-                    ? (Action<string>) (x => Console.WriteLine("[" + DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss")+ "] " + x ))
-                    : Console.WriteLine;
+                return x => Console.WriteLine((DisplayTimestamp ? "[" + DateTime.Now.ToString("dd-MMM-yyyy HH:mm:ss") + "] ": "") 
+                    + "[" + Thread.CurrentThread.ManagedThreadId + "] " + x);
             }
         }
     }

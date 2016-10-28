@@ -39,7 +39,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandLine.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Hex.cs" />
     <Compile Include="ListenerState.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
